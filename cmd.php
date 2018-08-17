@@ -7,3 +7,4 @@ if(isset($_POST['status'])){
 $message = trim(preg_replace('/\s+/', ' ', $message));
 echo json_encode(array('status' =>str_replace('\n','', $message)));
 
+?>
