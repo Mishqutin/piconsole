@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 </script>
 
-<h1>Raspbegytryy pie</h1>
+<h1>RAJSBERRY JUICY PISS</h1>
 
 </body>
 </html>
