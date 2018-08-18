@@ -56,7 +56,7 @@ require_once('helpers.php');
 }
 
 input {
-	width: 80%;
+	width: 70%;
 	background-color: black;
 	border: none;
 	    color: aqua;
