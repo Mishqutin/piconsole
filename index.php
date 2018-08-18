@@ -144,7 +144,7 @@ $(function () {
 
     frm.submit(function (ev) {
 			$("#console").append('<span class="a">piconsole</span>:<span class="b">~</span><span class="c">$</span> '+$(".cmd-command").val()+'<br>');
-			$(".cmd-command").val("");
+
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
@@ -153,6 +153,7 @@ $(function () {
             success: function (data) {
               	console.log(data);
                 $("#console").append('>> '+data['response']+'<br>');
+								$(".cmd-command").val("");
             }
         });
         ev.preventDefault();
