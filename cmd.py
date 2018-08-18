@@ -71,6 +71,7 @@ class cscCmds:
         cscCmds.client(line)
 
     config = {"name": "piconsoleUser", "entryCode": "CHWDP_JP100"}
+    IP = ("localhost", 33301)
 
     def client(x):
         if x[0]=="/":
@@ -80,7 +81,7 @@ class cscCmds:
         # Connect to host
         try:
             s = socket.socket()
-            s.connect(IP)
+            s.connect(cscCmds.IP)
         except:
             print("Could not connect to server")
             return 1
