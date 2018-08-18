@@ -11,6 +11,6 @@ if(isset($_POST['command'])){
 }
 
 $message = trim(preg_replace('/\s+/', ' ', $message));
-echo json_encode(array('response' =>str_replace('\n','', $message).' '. get_client_ip() ));
+echo json_encode(array('response' =>str_replace('\n','', $message) ));
 
 ?>
