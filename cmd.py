@@ -14,7 +14,7 @@ f.close()
 
 # Text formatting functions:
 def txtToHtml(string):
-    x = string.replace("\n", "<br>").replace(" ", "&nbsp;") #.replace("<", "&lt;").replace(">", "&gt;")
+    x = html.escape(string).replace("\n", "<br>")
     return x
 
 
@@ -194,7 +194,7 @@ class cscCmds:
                         print("Client: Invalid script file")
                 # If received simple string then print it out to console
                 else:
-                    print(html.escape(txt).replace("\n", "<br>"))
+                    print(txtToHtml(txt)
             # If got any error (mainly by socket being closed) break the loop
             except: break
 
