@@ -24,7 +24,7 @@ def cmdCat(args):
         if args[0]!="README.md":
             print("Lol nie masz praw")
         else:
-            f = open(os.getcwd() + "/" + args[0], "r")
+            f = open("/var/www/html/piconsole/" + args[0], "r")
             x = f.read()
             f.close()
             print(x)
