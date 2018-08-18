@@ -157,7 +157,7 @@ if not ClientIP in config["users"]:
     print("You seem new here! Lemme config your account...<br>")
     config["users"][ClientIP] = {"IP": ClientIP, "execClass": "basicCmds", "name": "unnamed"}
     saveConfig(config)
-    print("Welcome to Jajko Network Secret AntyZydowskie Komunistyczne Podziemie!<br>")
+    print("Welcome to Jajko Network Secret AntyZydowskie Komunistyczne Podziemie!<br><br>")
 
 execClass = eval(config["users"][ClientIP]["execClass"])
 
