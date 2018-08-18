@@ -47,6 +47,11 @@ Jest jeszcze konsola... No nie wiem, projekt jest od roku lub dwoch, a nie ma na
 Wiec wpisz '?#cscCmds' aby przejsc do konsoli, przez ktora mozesz rozgladac sie po systemie plikow.
 Wtedy mozesz uzywac ls, cd, cat itp
 Komendy sa w /home/pi/Documents/server/shell
+
+Komendy w basicCmds:
+help
+username nazwa - zmienia twoj username
+motd - Najwazniejsza komenda musisz ja uzyc kazdego dnia chociaz raz, bo timeline sie zalamie
 """
 
 
@@ -76,6 +81,19 @@ Komendy sa w /home/pi/Documents/server/shell
                 f.close()
                 print(x.replace("\n", "<br>"))
     cmds["cat"] = cmdCat
+
+    def cmdUsername(args):
+        global config
+        if len(args)<1:
+            print("Your username is: "+config["users"][ClientIP]["name"])
+        else:
+            config["users"][ClientIP]["name"] = args[0]
+            saveConfig(config)
+    cmds["username"] = cmdUsername
+
+    def cmdMotd(args):
+        print("Message of the day:<br>~-- [ SQUATTING LOW, MOVING FAST ] --~")
+    cmds["motd"] = cmdMotd
 
 
 
