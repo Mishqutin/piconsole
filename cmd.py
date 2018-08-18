@@ -7,17 +7,28 @@ invalidCmd = ["Jestes ********", "********* cie", "Noo i ****", "**** wie", "***
 cmds = {}
 
 def cmdHelp(args):
-    print("Tutaj pomocy nie znajdziesz.\n Sprobuj: lol")
+    print("Tutaj pomocy nie znajdziesz.")
 cmds["help"] = cmdHelp
 
-def cmdLol(args):
+def cmdEcho(args):
     if len(args)<1:
-        print("Uzycie: lol tekst")
+        print("Uzycie: echo tekst")
     else:
-        print("Chaslo nieprawilne: "+' '.join(args))
-cmds["lol"] = cmdLol
+        print(' '.join(args))
+cmds["echo"] = cmdLol
 
-
+def cmdCat(args):
+    if len(args)<1:
+        print("Uzycie: cat plik")
+    else:
+        if args[0]!="README.md":
+            print("Lol nie masz praw")
+        else:
+            f = open(args[0], "r")
+            x = f.read()
+            f.close()
+            print(x)
+cmds["cat"] = cmdCat
 
 
 
