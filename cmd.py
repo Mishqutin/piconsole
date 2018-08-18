@@ -4,6 +4,11 @@ import sys, random, os
 invalidCmdWtf = ["Jestes ********", "********* cie", "Noo i ****", "**** wie", "**********", "*********** Ci obore", "Przepraszam, lecz podajac mi takowe oto argumenty rozumiem, iz nie boisz sie, ze wilize ci piety lub wyrzecam ci wlosy lonowe widelcem do ostryg.."]
 invalidCmd = ["Twoja komenda jest inwalida"]
 
+CWD = "/var/www/html/piconsole"
+
+f = open(CWD + "/cmdConfig", 'r')
+config = eval(f.read())
+f.close()
 
 
 class basicCmds:
@@ -53,7 +58,7 @@ class testCmds:
 
 
 # Command execution
-execClass = testCmds
+execClass = eval(config["execClass"])
 
 line = ' '.join(sys.argv[1:])
 
