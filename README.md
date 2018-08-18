@@ -4,4 +4,5 @@
 # To-do list:
 * Usunac te smieszne podpowiedzi przy wpisywaniu
 * Waldek napraw IP klienta sie wyswietla na koncu
+* README.md wyswietla jakas stara wersje ? wtf timeline broken
 <br>
