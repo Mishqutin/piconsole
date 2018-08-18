@@ -15,7 +15,7 @@ def cmdEcho(args):
         print("Uzycie: echo tekst")
     else:
         print(' '.join(args))
-cmds["echo"] = cmdLol
+cmds["echo"] = cmdEcho
 
 def cmdCat(args):
     if len(args)<1:
