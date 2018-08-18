@@ -124,7 +124,6 @@ $(function () {
 					var json_str = readCookie('last_command');
 					var arr = JSON.parse(json_str);
 					if($.isArray(arr)){
-						console.log(keyPressCount38);
 						$(".cmd-command").val(arr[keyPressCount38]);
 					} else if (!$.isArray(arr) && arr) {
 							$(".cmd-command").val(arr);
