@@ -1,46 +1,60 @@
 #!/usr/bin/env python3
 import sys, random, os
 
-invalidCmd = ["Jestes ********", "********* cie", "Noo i ****", "**** wie", "**********", "*********** Ci obore", "Przepraszam, lecz podajac mi takowe oto argumenty rozumiem, iz nie boisz sie, ze wilize ci piety lub wyrzecam ci wlosy lonowe widelcem do ostryg.."]
+invalidCmdWtf = ["Jestes ********", "********* cie", "Noo i ****", "**** wie", "**********", "*********** Ci obore", "Przepraszam, lecz podajac mi takowe oto argumenty rozumiem, iz nie boisz sie, ze wilize ci piety lub wyrzecam ci wlosy lonowe widelcem do ostryg.."]
+invalidCmd = ["Twoja komenda jest inwalida"]
 
 
-cmds = {}
 
-def cmdHelp(args):
-    print("Tutaj pomocy nie znajdziesz.")
-cmds["help"] = cmdHelp
+class basicCmds:
+    def cmdExec(line):
+        line = ' '.join(sys.argv[1:])
 
-def cmdEcho(args):
-    if len(args)<1:
-        print("Uzycie: echo tekst")
-    else:
-        print(' '.join(args))
-cmds["echo"] = cmdEcho
+        if len(line.split())<1: line="xd"
 
-def cmdCat(args):
-    if len(args)<1:
-        print("Uzycie: cat plik")
-    else:
-        if args[0]!="README.md":
-            print("Lol nie masz praw")
+        cmd = line.split()[0]
+        args = line.split()[1:]
+
+        if cmd in cmds:
+            cmds[cmd](args)
         else:
-            f = open("/var/www/html/piconsole/" + args[0], "r")
-            x = f.read()
-            f.close()
-            print(x.replace("\n", "<br>"))
-cmds["cat"] = cmdCat
+            print(random.choice(invalidCmd))
 
 
+    cmds = {}
 
+    def cmdHelp(args):
+        print("Tutaj pomocy nie znajdziesz.")
+    cmds["help"] = cmdHelp
+
+    def cmdEcho(args):
+        if len(args)<1:
+            print("Uzycie: echo tekst")
+        else:
+            print(' '.join(args))
+    cmds["echo"] = cmdEcho
+
+    def cmdCat(args):
+        if len(args)<1:
+            print("Uzycie: cat plik")
+        else:
+            if args[0]!="README.md":
+                print("Lol nie masz praw")
+            else:
+                f = open("/var/www/html/piconsole/" + args[0], "r")
+                x = f.read()
+                f.close()
+                print(x.replace("\n", "<br>"))
+    cmds["cat"] = cmdCat
+
+class testCmds:
+    def cmdExec(line):
+        print(line)
+
+
+# Command execution
+execClass = testCmds
 
 line = ' '.join(sys.argv[1:])
 
-if len(line.split())<1: line="xd"
-
-cmd = line.split()[0]
-args = line.split()[1:]
-
-if cmd in cmds:
-    cmds[cmd](args)
-else:
-    print(random.choice(invalidCmd))
+execClass.cmdExec(line)
