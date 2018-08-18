@@ -12,7 +12,7 @@ config = eval(f.read())
 f.close()
 
 
-
+print(sys.argv)
 
 def classExists(string):
     try:
