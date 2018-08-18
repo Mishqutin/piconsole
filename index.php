@@ -96,7 +96,7 @@ $(function () {
             data: frm.serialize(),
             success: function (data) {
               	console.log(data);
-                $("#console").append('>> '+data['response']+'<br>');
+                $("#console").append(data['response']+'<br>');
 								$(".cmd-command").val("");
 								$("html, body").animate({ scrollTop: $(document).height() }, 100);
             }
