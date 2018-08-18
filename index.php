@@ -1,6 +1,6 @@
 <?php
 require_once('helpers.php');
-require_once('../logs.php');
+// require_once('../logs.php');
 ?>
 <!DOCTYPE html>
 <html>
