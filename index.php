@@ -154,6 +154,7 @@ $(function () {
               	console.log(data);
                 $("#console").append('>> '+data['response']+'<br>');
 								$(".cmd-command").val("");
+								$("html, body").animate({ scrollTop: $(document).height() }, 1000);
             }
         });
         ev.preventDefault();
