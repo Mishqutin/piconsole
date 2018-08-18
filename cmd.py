@@ -27,7 +27,7 @@ def cmdCat(args):
             f = open("/var/www/html/piconsole/" + args[0], "r")
             x = f.read()
             f.close()
-            print(x)
+            print(x.replace("\n", "<br>"))
 cmds["cat"] = cmdCat
 
 
