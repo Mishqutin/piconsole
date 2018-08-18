@@ -6,4 +6,5 @@
 * Waldek napraw IP klienta sie wyswietla na koncu
 * README.md wyswietla jakas stara wersje ? wtf timeline broken
 * Plik pythona, ktory bedzie sie wykonywal przy wejsciu na strone
+* Misza: Zoptymalizowac skrypta, bo muli: doadac katalogi z plikami ktore beda sie ladowac po wybraniu
 <br>
