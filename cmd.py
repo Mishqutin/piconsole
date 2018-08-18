@@ -69,6 +69,10 @@ motd - Najwazniejsza komenda musisz ja uzyc kazdego dnia chociaz raz, bo timelin
             print(' '.join(args))
     cmds["echo"] = cmdEcho
 
+    def cmdLol(args):
+        print("uzycie komenda <tekst>")
+    cmds["lol"] = cmdLol
+
     def cmdCat(args):
         if len(args)<1:
             print("Uzycie: cat plik")
