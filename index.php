@@ -17,7 +17,7 @@ require_once('helpers.php');
 	width:750px;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:100px;
+
 	font-size:14px;
 			min-height: 16px;
 }
@@ -28,6 +28,7 @@ require_once('helpers.php');
 		width:750px;
 		margin-left:auto;
 		margin-right:auto;
+		margin-top:25px;
 		font-size:14px;
         min-height: 16px;
 	}
