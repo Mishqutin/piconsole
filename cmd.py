@@ -12,10 +12,6 @@ f.close()
 
 
 class basicCmds:
-
-    cmds = {}
-
-
     def cmdExec(line):
         line = ' '.join(sys.argv[1:])
 
@@ -25,12 +21,12 @@ class basicCmds:
         args = line.split()[1:]
 
         if cmd in cmds:
-            cmds[cmd](args)
+            basicCmds.cmds[cmd](args)
         else:
             print(random.choice(invalidCmd))
 
 
-
+    cmds = {}
 
     def cmdHelp(args):
         print("Tutaj pomocy nie znajdziesz.")
