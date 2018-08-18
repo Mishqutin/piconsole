@@ -12,6 +12,16 @@ config = eval(f.read())
 f.close()
 
 
+# Text formatting functions:
+def txtToHtml(string):
+    x = string.replace("\n", "<br>").replace(" ", "&nbsp;")
+    return x
+
+
+
+
+
+
 
 def saveConfig(config):
     f = open(CWD + "/cmdConfig", "w")
@@ -184,7 +194,7 @@ class cscCmds:
                         print("Client: Invalid script file")
                 # If received simple string then print it out to console
                 else:
-                    print(txt.replace("\n", "<br>"))
+                    print(txtToHtml(txt))
             # If got any error (mainly by socket being closed) break the loop
             except: break
 
