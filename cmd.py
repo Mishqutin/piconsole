@@ -37,10 +37,24 @@ class basicCmds:
             print(random.choice(invalidCmd))
 
 
+
+    helpText = """\
+Tu ma byc pomoc ale na razie jest slaba
+Wienc tak:
+Jestes w prostej konsoli: basicCmds
+Mozesz zmieniac konsole przez: ?#nazwa
+Jest jeszcze konsola... No nie wiem, projekt jest od roku lub dwoch, a nie ma nazwy.
+Wiec wpisz '?#cscCmds' aby przejsc do konsoli, przez ktora mozesz rozgladac sie po systemie plikow.
+Wtedy mozesz uzywac ls, cd, cat itp
+Komendy sa w /home/pi/Documents/server/shell
+"""
+
+
+
     cmds = {}
 
     def cmdHelp(args):
-        print("Tutaj pomocy nie znajdziesz.")
+        print(helpText.replace("\n", "<br>"))
     cmds["help"] = cmdHelp
 
     def cmdEcho(args):
