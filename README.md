@@ -10,6 +10,3 @@
 - Misza:
 * Zoptymalizowac skrypta, bo muli: doadac katalogi z plikami ktore beda sie ladowac po wybraniu
 <br>
-Jak nie wiesz co robic to wpisz 'help'
-Polecam rowniez 'motd'
-<br>
