@@ -68,7 +68,7 @@ class basicCmds:
 
 class cscCmds:
     def cmdExec(line):
-        client(line)
+        cscCmds.client(line)
 
     config = {"name": "piconsoleUser", "entryCode": "CHWDP_JP100"}
 
