@@ -78,6 +78,7 @@ input:focus {
 </form>
 <script>
 $(function () {
+	var keyPressCount38 = 0;
 	$( document ).ready(function() {
 		$( ".cmd-command" ).focus();
 	});
@@ -88,14 +89,24 @@ $(function () {
 
     frm.submit(function (ev) {
 			$("#console").append('<span class="a"><?= get_client_ip(); ?></span>:<span class="b">~</span><span class="c">$</span> '+$(".cmd-command").val()+'<br>');
-				createCookie('last_command', $(".cmd-command").val());
+				var readCookie_last_command = readCookie('last_command');
+				var arr_readCookie_last_command = JSON.parse(readCookie_last_command);
+				if(readCookie_last_command && $.isArray(arr_readCookie_last_command)){
+					arr_readCookie_last_command.unshift($(".cmd-command").val());
+					var last_command_value = arr_readCookie_last_command.slice(0);				}
+				else {
+					var last_command_value = [];
+					last_command_value.push($(".cmd-command").val());
+				}
+				keyPressCount38 = 0;
+				var last_command = JSON.stringify(last_command_value);
+				createCookie('last_command', last_command);
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
             dataType: 'json',
             data: frm.serialize(),
             success: function (data) {
-              	console.log(data);
                 $("#console").append(data['response']+'<br>');
 								$(".cmd-command").val("");
 								$("html, body").animate({ scrollTop: $(document).height() }, 100);
@@ -109,21 +120,50 @@ $(function () {
 		    e = e || window.event;
 
 		    if (e.keyCode == '38') {
-		       $(".cmd-command").val(readCookie('last_command'));
+					var json_str = readCookie('last_command');
+					var arr = JSON.parse(json_str);
+					if($.isArray(arr)){
+						console.log(keyPressCount38);
+						$(".cmd-command").val(arr[keyPressCount38]);
+					} else if (!$.isArray(arr) && arr) {
+							$(".cmd-command").val(arr);
+					} else {
+
+					}
+					if(arr.length > keyPressCount38){
+						keyPressCount38++;
+					} else {
+						keyPressCount38 = 0;
+					}
+
 		    }
 		    else if (e.keyCode == '40') {
-		        // down arrow
-		    }
-		    else if (e.keyCode == '37') {
-		       // left arrow
-		    }
-		    else if (e.keyCode == '39') {
-		       // right arrow
-		    }
+					var json_str = readCookie('last_command');
+					var arr = JSON.parse(json_str);
+					if(arr.length >= keyPressCount38){
+						if(keyPressCount38 <= 0){
+							keyPressCount38 = arr.length;
+						} else {
+							keyPressCount38--;
+						}
 
+					} else {
+						keyPressCount38 = 0;
+					}
+					if($.isArray(arr)){
+						console.log(keyPressCount38);
+						$(".cmd-command").val(arr[keyPressCount38]);
+					} else if (!$.isArray(arr) && arr) {
+							$(".cmd-command").val(arr);
+					} else {
+
+					}
+
+		    }
 		}
 		document.onkeydown = checkKey;
 		function createCookie(name, value, days) {
+
 		    var expires;
 
 		    if (days) {
