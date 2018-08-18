@@ -75,9 +75,9 @@ class cscCmds:
     IP = ("localhost", 33301)
 
     def client(x):
-        if x[0]=="/":
+        #if x[0]=="/":
             #reconnect(x[1:].split())
-            return 0
+            #return 0
 
         # Connect to host
         try:
