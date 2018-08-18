@@ -37,7 +37,7 @@ ClientIP = sys.argv[1]
 
 if not ClientIP in config["users"]:
     print("You seem new here! Lemme config your account...<br>")
-    config["users"][ClientIP] = {"IP": ClientIP, "execClass": "basicCmds", "name": "unnamed"}
+    config["users"][ClientIP] = {"IP": ClientIP, "execClass": "basicCmds", "name": "unnamed", "cscConfig":{"host": "localhost", "port": 33301, "entryCode": "CHWDP_JP100"}}
     saveConfig(config)
     print("Hello! :)<br><br>")
 
@@ -136,10 +136,20 @@ motd - Najwazniejsza komenda musisz ja uzyc kazdego dnia chociaz raz, bo timelin
 
 class cscCmds:
     def cmdExec(line):
-        cscCmds.client(line)
+        global config
+        if len(line)==0:
+            return False
+        elif line[0]=="/":
+            args = line[1:].split()
+            if args[0]=="host":
+                config["users"][ClientIP]["cscConfig"]["host"] = args[1]
+            saveConfig(config)
+        else:
+            cscCmds.client(line)
 
-    config = {"name": config["users"][ClientIP]["name"], "entryCode": "CHWDP_JP100"}
-    IP = ("localhost", 33301)
+    config = {"name": config["users"][ClientIP]["name"],   "entryCode": config["users"][ClientIP]["cscConfig"]["entryCode"]}
+
+    IP = (config["users"][ClientIP]["cscConfig"]["host"],    config["users"][ClientIP]["cscConfig"]["port"])
 
     def client(x):
         #if x[0]=="/":
