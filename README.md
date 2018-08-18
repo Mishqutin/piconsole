@@ -4,7 +4,7 @@
 # To-do list:
 * Usunac te smieszne podpowiedzi przy wpisywaniu
 * Waldek napraw IP klienta sie wyswietla na koncu
-* README.md wyswietla jakas stara wersje ? wtf timeline broken
+* Przesylanie w argumencie do cmd.py znakow html'a jak wieksze niz, mniejsze niz, hash itp.
 * Plik pythona, ktory bedzie sie wykonywal przy wejsciu na strone
 * Misza: Zoptymalizowac skrypta, bo muli: doadac katalogi z plikami ktore beda sie ladowac po wybraniu
 <br>
