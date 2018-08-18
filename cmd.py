@@ -92,7 +92,7 @@ motd - Najwazniejsza komenda musisz ja uzyc kazdego dnia chociaz raz, bo timelin
     cmds["username"] = cmdUsername
 
     def cmdMotd(args):
-        print("Message of the day:<br>~-- [ SQUATTING LOW, MOVING FAST ] --~")
+        print("Message of the day:<br><br>                                   ~-- [ SQUATTING LOW, MOVING FAST ] --~<br><br>")
     cmds["motd"] = cmdMotd
 
 
