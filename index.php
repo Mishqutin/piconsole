@@ -121,6 +121,7 @@ $(function () {
 		    e = e || window.event;
 
 		    if (e.keyCode == '38') {
+					$(".cmd-command").val("");
 					var json_str = readCookie('last_command');
 					var arr = JSON.parse(json_str);
 					if($.isArray(arr)){
@@ -130,25 +131,30 @@ $(function () {
 					} else {
 
 					}
-					if(arr.length > keyPressCount38){
-						keyPressCount38++;
-					} else {
-						keyPressCount38 = 0;
+					if(arr){
+						if(arr.length > keyPressCount38){
+							keyPressCount38++;
+						} else {
+							keyPressCount38 = 0;
+						}
 					}
 
 		    }
 		    else if (e.keyCode == '40') {
+					$(".cmd-command").val("");
 					var json_str = readCookie('last_command');
 					var arr = JSON.parse(json_str);
-					if(arr.length >= keyPressCount38){
-						if(keyPressCount38 <= 0){
-							keyPressCount38 = arr.length;
-						} else {
-							keyPressCount38--;
-						}
+					if(arr){
+						if(arr.length >= keyPressCount38){
+							if(keyPressCount38 <= 0){
+								keyPressCount38 = arr.length;
+							} else {
+								keyPressCount38--;
+							}
 
-					} else {
-						keyPressCount38 = 0;
+						} else {
+							keyPressCount38 = 0;
+						}
 					}
 					if($.isArray(arr)){
 						console.log(keyPressCount38);
@@ -192,6 +198,7 @@ $(function () {
 		function eraseCookie(name) {
 		    createCookie(name, "", -1);
 		}
+		
 });
 </script>
 
