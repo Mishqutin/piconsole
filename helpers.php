@@ -17,3 +17,9 @@ function get_client_ip() {
           $ipaddress = 'UNKNOWN';
       return $ipaddress;
   }
+
+function init_message() {
+	$initMessage = shell_exec("cd /home/pi/ && sudo /var/www/html/piconsole/cmdInit.py ".get_client_ip()." 2>&1");
+	$initMessage = trim(preg_replace('/\s+/', ' ', $initMessage));
+	return str_replace('\n','', $initMessage);
+}
