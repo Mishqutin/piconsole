@@ -24,7 +24,7 @@ cmds["lol"] = cmdLol
 
 line = ' '.join(sys.argv[1:])
 
-if len(line.split())<1: line="chuj"
+if len(line.split())<1: line="xd"
 
 cmd = line.split()[0]
 args = line.split()[1:]
@@ -33,5 +33,3 @@ if cmd in cmds:
     cmds[cmd](args)
 else:
     print(random.choice(invalidCmd))
-
-
