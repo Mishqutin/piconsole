@@ -126,7 +126,7 @@ class cscCmds:
                         print("Client: Invalid script file")
                 # If received simple string then print it out to console
                 else:
-                    print(txt)
+                    print(txt.replace("\n", "<br>"))
             # If got any error (mainly by socket being closed) break the loop
             except: break
 
