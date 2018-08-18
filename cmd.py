@@ -227,6 +227,6 @@ if line[0:2]=="?#":
     else:
         print("No such class!")
 elif line=="?stats":
-    print("IP: {}<br>Class: {}".format(ClientIP, execClass))
+    print("IP: {}<br>Username: {}<br>Class: {}".format(ClientIP, config["users"][ClientIP]["name"], config["users"][ClientIP]["execClass"]))
 else:
     execClass.cmdExec(line)
