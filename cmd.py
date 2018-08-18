@@ -13,6 +13,28 @@ f.close()
 
 
 
+def saveConfig(config):
+    f = open(CWD + "/cmdConfig", "w")
+    f.write(str(config))
+    f.close()
+
+
+
+
+
+
+ClientIP = sys.argv[1]
+
+if not ClientIP in config["users"]:
+    print("You seem new here! Lemme config your account...<br>")
+    config["users"][ClientIP] = {"IP": ClientIP, "execClass": "basicCmds", "name": "unnamed"}
+    saveConfig(config)
+    print("Hello! :)<br><br>")
+
+
+
+
+
 def classExists(string):
     try:
         if isclass(eval(string)):
@@ -106,7 +128,7 @@ class cscCmds:
     def cmdExec(line):
         cscCmds.client(line)
 
-    config = {"name": "piconsoleUser", "entryCode": "CHWDP_JP100"}
+    config = {"name": config["users"][ClientIP]["name"], "entryCode": "CHWDP_JP100"}
     IP = ("localhost", 33301)
 
     def client(x):
@@ -178,21 +200,10 @@ class testCmds:
 
 
 
-def saveConfig(config):
-    f = open(CWD + "/cmdConfig", "w")
-    f.write(str(config))
-    f.close()
+
 
 
 # Command execution
-
-ClientIP = sys.argv[1]
-
-if not ClientIP in config["users"]:
-    print("You seem new here! Lemme config your account...<br>")
-    config["users"][ClientIP] = {"IP": ClientIP, "execClass": "basicCmds", "name": "unnamed"}
-    saveConfig(config)
-    print("Welcome to Jajko Network Secret AntyZydowskie Komunistyczne Podziemie!<br><br>")
 
 execClass = eval(config["users"][ClientIP]["execClass"])
 
