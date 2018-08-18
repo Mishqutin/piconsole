@@ -12,6 +12,8 @@ config = eval(f.read())
 f.close()
 
 
+
+
 def classExists(string):
     try:
         if isclass(eval(string)):
@@ -23,7 +25,6 @@ def classExists(string):
 
 class basicCmds:
     def cmdExec(line):
-        line = ' '.join(sys.argv[1:])
 
         if len(line.split())<1: line="xd"
 
@@ -151,9 +152,12 @@ class testCmds:
 
 
 # Command execution
+
+ClientIP = sys.argv[1]
+
 execClass = eval(config["execClass"])
 
-line = ' '.join(sys.argv[1:])
+line = ' '.join(sys.argv[2:])
 
 if line[0:2]=="?#":
     if classExists(line[2:]):
@@ -164,5 +168,7 @@ if line[0:2]=="?#":
         print("Updated execution class")
     else:
         print("No such class!")
+elif line=="?stats":
+    print("IP: {}<br>Class: {}".format(ClientIP, execClass))
 else:
     execClass.cmdExec(line)
