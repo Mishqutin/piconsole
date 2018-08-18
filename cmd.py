@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import sys, random, os
+from inspect import isclass
 
 invalidCmdWtf = ["Jestes ********", "********* cie", "Noo i ****", "**** wie", "**********", "*********** Ci obore", "Przepraszam, lecz podajac mi takowe oto argumenty rozumiem, iz nie boisz sie, ze wilize ci piety lub wyrzecam ci wlosy lonowe widelcem do ostryg.."]
 invalidCmd = ["Twoja komenda jest inwalida"]
@@ -13,7 +14,7 @@ f.close()
 
 def classExists(string):
     try:
-        if type(eval(string))=="class":
+        if isclass(eval(string)):
             return True
     except:
         return False
