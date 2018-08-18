@@ -143,8 +143,8 @@ input:focus {
 // }
 
 </script>
-<div class="console_start"><span id="a"><?= get_client_ip(); ?></span>:<span id="b">~</span><span id="c">$</span> <br/><br/></div>
-<div id="console"><?= init_message() ?></div>
+
+<div id="console"><span id="a"><?= get_client_ip(); ?></span>:<span id="b">~</span><span id="c">$</span> <?= init_message() ?></div>
 
 <div class="res"></div>
 <form action="cmd.php" id="cmdForm" method="post" >
