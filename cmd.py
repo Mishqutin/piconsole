@@ -136,35 +136,36 @@ class cscCmds:
 
 
 
-
-
-
-
-
-
-
-
-
-
 class testCmds:
     def cmdExec(line):
         print(line)
+
+
+
+
+def saveConfig(config):
+    f = open(CWD + "/cmdConfig", "w")
+    f.write(str(config))
+    f.close()
 
 
 # Command execution
 
 ClientIP = sys.argv[1]
 
-execClass = eval(config["execClass"])
+if not ClientIP in config["users"]:
+    print("You seem new here! Lemme config your account...")
+    config["users"][ClientIP] = {"IP": ClientIP, "execClass": "basicCmds", "name": "unnamed"}
+    saveConfig(config)
+
+execClass = eval(config["users"][ClientIP]["execClass"])
 
 line = ' '.join(sys.argv[2:])
 
 if line[0:2]=="?#":
     if classExists(line[2:]):
-        config["execClass"] = line[2:]
-        f = open(CWD + "/cmdConfig", "w")
-        f.write(str(config))
-        f.close()
+        config["users"][ClientIP]["execClass"] = line[2:]
+        saveConfig(config)
         print("Updated execution class")
     else:
         print("No such class!")
