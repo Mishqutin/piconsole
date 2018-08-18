@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import sys, random, os, socket, time
+import sys, random, os, socket, time, html
 from inspect import isclass
 
 invalidCmdWtf = ["Jestes ********", "********* cie", "Noo i ****", "**** wie", "**********", "*********** Ci obore", "Przepraszam, lecz podajac mi takowe oto argumenty rozumiem, iz nie boisz sie, ze wilize ci piety lub wyrzecam ci wlosy lonowe widelcem do ostryg.."]
@@ -194,7 +194,7 @@ class cscCmds:
                         print("Client: Invalid script file")
                 # If received simple string then print it out to console
                 else:
-                    print(txtToHtml(txt))
+                    print(html.escape(txt))
             # If got any error (mainly by socket being closed) break the loop
             except: break
 
