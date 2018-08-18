@@ -143,7 +143,7 @@ input:focus {
 // }
 
 </script>
-<div class="console_start"><span id="a"><?= get_client_ip(); ?></span>:<span id="b">~</span><span id="c">$</span> cat README.md<br/><br/></div>
+<div class="console_start"><span id="a"><?= get_client_ip(); ?></span>:<span id="b">~</span><span id="c">$</span> <br/><br/></div>
 <div id="console"><?= init_message() ?></div>
 
 <div class="res"></div>
