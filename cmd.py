@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import sys, random
+import sys, random, os
 
 invalidCmd = ["Jestes ********", "********* cie", "Noo i ****", "**** wie", "**********", "*********** Ci obore", "Przepraszam, lecz podajac mi takowe oto argumenty rozumiem, iz nie boisz sie, ze wilize ci piety lub wyrzecam ci wlosy lonowe widelcem do ostryg.."]
 
@@ -24,7 +24,7 @@ def cmdCat(args):
         if args[0]!="README.md":
             print("Lol nie masz praw")
         else:
-            f = open(args[0], "r")
+            f = open(os.getcwd() + "/" + args[0], "r")
             x = f.read()
             f.close()
             print(x)

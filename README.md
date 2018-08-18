@@ -2,5 +2,5 @@
 # piconsole
 
 # To-do list:
-* Auto Przewijanie strony
+* Usunac te smieszne podpowiedzi przy wpisywaniu
 <br>
