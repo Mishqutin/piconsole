@@ -147,7 +147,7 @@ class cscCmds:
         else:
             cscCmds.client(line)
 
-    config = {"name": config["users"][ClientIP]["name"],   "entryCode": config["users"][ClientIP]["cscConfig"]["entryCode"]}
+    ccConfig = {"name": config["users"][ClientIP]["name"],   "entryCode": config["users"][ClientIP]["cscConfig"]["entryCode"]}
 
     IP = (config["users"][ClientIP]["cscConfig"]["host"],    config["users"][ClientIP]["cscConfig"]["port"])
 
@@ -164,7 +164,7 @@ class cscCmds:
             print("Could not connect to server")
             return 1
 
-        s.send(( cscCmds.config["name"]+"@"+cscCmds.config["entryCode"] ).encode())
+        s.send(( cscCmds.ccConfig["name"]+"@"+cscCmds.ccConfig["entryCode"] ).encode())
         reply = (s.recv(16)).decode("ASCII")
         if reply!="ok":
             print("Access denied.")
