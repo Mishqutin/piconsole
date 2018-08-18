@@ -73,7 +73,7 @@ input:focus {
 
 <div class="res"></div>
 <form action="cmd.php" id="cmdForm" method="post"  autocomplete="off">
-  <span class="a"><?= get_client_ip(); ?></span>:<span class="b">~</span><span class="c">$</span> <input type="text" autofocus class="cmd-command" name="command" autocomplete="false">
+  <span class="a"><?= get_client_ip(); ?></span>:<span class="b">~</span><span class="c">$</span> <input type="text" autofocus class="cmd-command" name="command" autocomplete="off">
   <button style="display: none;" id="submit" >submit</button>
 </form>
 <script>
