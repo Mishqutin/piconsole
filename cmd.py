@@ -61,5 +61,11 @@ class testCmds:
 execClass = eval(config["execClass"])
 
 line = ' '.join(sys.argv[1:])
-
-execClass.cmdExec(line)
+if line[0:1]=="#?":
+    config["execClass"] = line[2:]
+    f = open(CWD + "/cmdConfig", "w")
+    f.write(str(config))
+    f.close()
+    print("Updated execution class")
+else:
+    execClass.cmdExec(line)
