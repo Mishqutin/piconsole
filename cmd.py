@@ -143,6 +143,10 @@ class cscCmds:
             args = line[1:].split()
             if args[0]=="host":
                 config["users"][ClientIP]["cscConfig"]["host"] = args[1]
+            elif args[0]=="port":
+                config["users"][ClientIP]["cscConfig"]["port"] = int(args[1])
+            elif args[0]=="pass":
+                config["users"][ClientIP]["cscConfig"]["entryCode"] = args[1]
             saveConfig(config)
         else:
             cscCmds.client(line)
