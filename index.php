@@ -80,7 +80,7 @@ input:focus {
 $(function () {
 	var keyPressCount38 = 0;
 	$( document ).ready(function() {
-		eraseCookie('last_command');
+
 		$( ".cmd-command" ).focus();
 	});
 	$( document ).click(function() {
@@ -94,8 +94,10 @@ $(function () {
 				var arr_readCookie_last_command = JSON.parse(readCookie_last_command);
 				if(readCookie_last_command && $.isArray(arr_readCookie_last_command)){
 					arr_readCookie_last_command.unshift($(".cmd-command").val());
-					var last_command_value = arr_readCookie_last_command.slice(0);				}
-				else {
+					var last_command_value = arr_readCookie_last_command.slice(0);
+				} else if(readCookie_last_command && !$.isArray(arr_readCookie_last_command)) {
+					eraseCookie('last_command');
+				}	else {
 					var last_command_value = [];
 					last_command_value.push($(".cmd-command").val());
 				}
@@ -127,7 +129,7 @@ $(function () {
 					if($.isArray(arr)){
 						$(".cmd-command").val(arr[keyPressCount38]);
 					} else if (!$.isArray(arr) && arr) {
-							$(".cmd-command").val(arr);
+							eraseCookie('last_command');
 					} else {
 
 					}
@@ -160,7 +162,7 @@ $(function () {
 						console.log(keyPressCount38);
 						$(".cmd-command").val(arr[keyPressCount38]);
 					} else if (!$.isArray(arr) && arr) {
-							$(".cmd-command").val(arr);
+							eraseCookie('last_command');
 					} else {
 
 					}
@@ -198,7 +200,7 @@ $(function () {
 		function eraseCookie(name) {
 		    createCookie(name, "", -1);
 		}
-		
+
 });
 </script>
 
