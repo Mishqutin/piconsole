@@ -80,6 +80,7 @@ input:focus {
 $(function () {
 	var keyPressCount38 = 0;
 	$( document ).ready(function() {
+		eraseCookie('last_command');
 		$( ".cmd-command" ).focus();
 	});
 	$( document ).click(function() {
