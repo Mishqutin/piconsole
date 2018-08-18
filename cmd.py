@@ -61,7 +61,8 @@ class testCmds:
 execClass = eval(config["execClass"])
 
 line = ' '.join(sys.argv[1:])
-if line[0:1]=="#?":
+
+if line[0:2]=="?#":
     config["execClass"] = line[2:]
     f = open(CWD + "/cmdConfig", "w")
     f.write(str(config))
