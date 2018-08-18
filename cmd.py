@@ -14,7 +14,7 @@ f.close()
 
 # Text formatting functions:
 def txtToHtml(string):
-    x = string.replace("\n", "<br>").replace(" ", "&nbsp;").replace("<", "&lt;").replace(">", "&gt;")
+    x = string.replace("\n", "<br>").replace(" ", "&nbsp;") #.replace("<", "&lt;").replace(">", "&gt;")
     return x
 
 
