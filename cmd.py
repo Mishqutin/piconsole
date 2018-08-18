@@ -54,7 +54,7 @@ Komendy sa w /home/pi/Documents/server/shell
     cmds = {}
 
     def cmdHelp(args):
-        print(helpText.replace("\n", "<br>"))
+        print(basicCmds.helpText.replace("\n", "<br>"))
     cmds["help"] = cmdHelp
 
     def cmdEcho(args):
