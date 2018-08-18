@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import sys, random, os, socket
+import sys, random, os, socket, time
 from inspect import isclass
 
 invalidCmdWtf = ["Jestes ********", "********* cie", "Noo i ****", "**** wie", "**********", "*********** Ci obore", "Przepraszam, lecz podajac mi takowe oto argumenty rozumiem, iz nie boisz sie, ze wilize ci piety lub wyrzecam ci wlosy lonowe widelcem do ostryg.."]
@@ -37,10 +37,29 @@ class basicCmds:
             print(random.choice(invalidCmd))
 
 
+
+    helpText = """\
+Tu ma byc pomoc ale na razie jest slaba
+Wienc tak:
+Jestes w prostej konsoli: basicCmds
+Mozesz zmieniac konsole przez: ?#nazwa
+Jest jeszcze konsola... No nie wiem, projekt jest od roku lub dwoch, a nie ma nazwy.
+Wiec wpisz '?#cscCmds' aby przejsc do konsoli, przez ktora mozesz rozgladac sie po systemie plikow.
+Wtedy mozesz uzywac ls, cd, cat itp
+Komendy sa w /home/pi/Documents/server/shell
+
+Komendy w basicCmds:
+help
+username nazwa - zmienia twoj username
+motd - Najwazniejsza komenda musisz ja uzyc kazdego dnia chociaz raz, bo timeline sie zalamie
+"""
+
+
+
     cmds = {}
 
     def cmdHelp(args):
-        print("Tutaj pomocy nie znajdziesz.")
+        print(basicCmds.helpText.replace("\n", "<br>"))
     cmds["help"] = cmdHelp
 
     def cmdEcho(args):
@@ -63,6 +82,19 @@ class basicCmds:
                 print(x.replace("\n", "<br>"))
     cmds["cat"] = cmdCat
 
+    def cmdUsername(args):
+        global config
+        if len(args)<1:
+            print("Your username is: "+config["users"][ClientIP]["name"])
+        else:
+            config["users"][ClientIP]["name"] = args[0]
+            saveConfig(config)
+    cmds["username"] = cmdUsername
+
+    def cmdMotd(args):
+        print("Message of the day:<br><br>->&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;~-- [ SQUATTING LOW, MOVING FAST ] --~<br><br>")
+    cmds["motd"] = cmdMotd
+
 
 
 
@@ -75,9 +107,9 @@ class cscCmds:
     IP = ("localhost", 33301)
 
     def client(x):
-        if x[0]=="/":
+        #if x[0]=="/":
             #reconnect(x[1:].split())
-            return 0
+            #return 0
 
         # Connect to host
         try:
@@ -136,35 +168,37 @@ class cscCmds:
 
 
 
-
-
-
-
-
-
-
-
-
-
 class testCmds:
     def cmdExec(line):
         print(line)
+
+
+
+
+def saveConfig(config):
+    f = open(CWD + "/cmdConfig", "w")
+    f.write(str(config))
+    f.close()
 
 
 # Command execution
 
 ClientIP = sys.argv[1]
 
-execClass = eval(config["execClass"])
+if not ClientIP in config["users"]:
+    print("You seem new here! Lemme config your account...<br>")
+    config["users"][ClientIP] = {"IP": ClientIP, "execClass": "basicCmds", "name": "unnamed"}
+    saveConfig(config)
+    print("Welcome to Jajko Network Secret AntyZydowskie Komunistyczne Podziemie!<br><br>")
+
+execClass = eval(config["users"][ClientIP]["execClass"])
 
 line = ' '.join(sys.argv[2:])
 
 if line[0:2]=="?#":
     if classExists(line[2:]):
-        config["execClass"] = line[2:]
-        f = open(CWD + "/cmdConfig", "w")
-        f.write(str(config))
-        f.close()
+        config["users"][ClientIP]["execClass"] = line[2:]
+        saveConfig(config)
         print("Updated execution class")
     else:
         print("No such class!")
