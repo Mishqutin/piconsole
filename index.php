@@ -1,3 +1,7 @@
+<?php
+require_once('helpers.php');
+require_once('../logs.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +11,23 @@
 	body {
 		background-color: #000
 	}
+.console_start {
+	font-family: courier, monospace;
+	color: #fff;
+	width:750px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:100px;
+	font-size:14px;
+			min-height: 16px;
+}
+
 	#console {
 		font-family: courier, monospace;
 		color: #fff;
 		width:750px;
 		margin-left:auto;
 		margin-right:auto;
-		margin-top:100px;
 		font-size:14px;
         min-height: 16px;
 	}
@@ -129,10 +143,12 @@ function t() {
 }
 
 </script>
-<div id="console"></div>
+<div class="console_start"><span id="a"><?= get_client_ip(); ?></span>:<span id="b">~</span><span id="c">$</span> cat README.md<br/><br/>
+<div id="console"></div></div>
+
 <div class="res"></div>
 <form action="cmd.php" id="cmdForm" method="post" style="display:none;" >
-  <span class="a">piconsole</span>:<span class="b">~</span><span class="c">$</span> <input type="text" autofocus class="cmd-command" name="command" autocomplete="false">
+  <span class="a"><?= get_client_ip(); ?></span>:<span class="b">~</span><span class="c">$</span> <input type="text" autofocus class="cmd-command" name="command" autocomplete="false">
   <button style="display: none;" id="submit" >submit</button>
 </form>
 <script>
@@ -143,7 +159,7 @@ $(function () {
     var frm = $('#cmdForm');
 
     frm.submit(function (ev) {
-			$("#console").append('<span class="a">piconsole</span>:<span class="b">~</span><span class="c">$</span> '+$(".cmd-command").val()+'<br>');
+			$("#console").append('<span class="a"><?= get_client_ip(); ?></span>:<span class="b">~</span><span class="c">$</span> '+$(".cmd-command").val()+'<br>');
 
         $.ajax({
             type: frm.attr('method'),
