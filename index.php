@@ -88,7 +88,7 @@ $(function () {
 
     frm.submit(function (ev) {
 			$("#console").append('<span class="a"><?= get_client_ip(); ?></span>:<span class="b">~</span><span class="c">$</span> '+$(".cmd-command").val()+'<br>');
-
+				createCookie('last_command', $(".cmd-command").val());
         $.ajax({
             type: frm.attr('method'),
             url: frm.attr('action'),
@@ -103,6 +103,55 @@ $(function () {
         });
         ev.preventDefault();
     });
+
+		function checkKey(e) {
+
+		    e = e || window.event;
+
+		    if (e.keyCode == '38') {
+		       $(".cmd-command").val(readCookie('last_command'));
+		    }
+		    else if (e.keyCode == '40') {
+		        // down arrow
+		    }
+		    else if (e.keyCode == '37') {
+		       // left arrow
+		    }
+		    else if (e.keyCode == '39') {
+		       // right arrow
+		    }
+
+		}
+		document.onkeydown = checkKey;
+		function createCookie(name, value, days) {
+		    var expires;
+
+		    if (days) {
+		        var date = new Date();
+		        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+		        expires = "; expires=" + date.toGMTString();
+		    } else {
+		        expires = "";
+		    }
+		    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
+		}
+
+		function readCookie(name) {
+		    var nameEQ = encodeURIComponent(name) + "=";
+		    var ca = document.cookie.split(';');
+		    for (var i = 0; i < ca.length; i++) {
+		        var c = ca[i];
+		        while (c.charAt(0) === ' ')
+		            c = c.substring(1, c.length);
+		        if (c.indexOf(nameEQ) === 0)
+		            return decodeURIComponent(c.substring(nameEQ.length, c.length));
+		    }
+		    return null;
+		}
+
+		function eraseCookie(name) {
+		    createCookie(name, "", -1);
+		}
 });
 </script>
 
