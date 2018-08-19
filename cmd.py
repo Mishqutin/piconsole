@@ -46,11 +46,11 @@ if not ClientIP in config["users"]:
 
 
 def classExists(string):
-    pass
-    #os.path.exist()
+    os.path.exist(CWD + "/data/cmdClasses/" + string + ".py"()
 
 
 
+# Load selected class from file
 
 f = open(CWD + "/data/cmdClasses/" + config["users"][ClientIP]["execClass"]+".py", 'r')
 code = f.read()
