@@ -6,7 +6,7 @@ class mainClass:
         cmd = line.split()[0]
         args = line.split()[1:]
 
-        if cmd in basicCmds.cmds:
+        if cmd in mainClass.cmds:
             mainClass.cmds[cmd](args)
         else:
             print(random.choice(invalidCmd))
