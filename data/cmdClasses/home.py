@@ -14,7 +14,7 @@ class mainClass:
 
 
     helpText = """\
-Komendy ogólne:
+Komendy ogolne:
 ?#<klasa> - Wybierasz program, ktory uzywasz
 ?class - Listuje dostepne programy
 ?stats - Info
