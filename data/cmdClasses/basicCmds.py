@@ -1,4 +1,4 @@
-class execClass:
+class mainClass:
     def cmdExec(line):
 
         if len(line.split())<1: line="xd"
@@ -7,7 +7,7 @@ class execClass:
         args = line.split()[1:]
 
         if cmd in basicCmds.cmds:
-            basicCmds.cmds[cmd](args)
+            mainClass.cmds[cmd](args)
         else:
             print(random.choice(invalidCmd))
 
@@ -34,7 +34,7 @@ motd - Najwazniejsza komenda musisz ja uzyc kazdego dnia chociaz raz, bo timelin
     cmds = {}
 
     def cmdHelp(args):
-        print(basicCmds.helpText.replace("\n", "<br>"))
+        print(mainClass.helpText.replace("\n", "<br>"))
     cmds["help"] = cmdHelp
 
     def cmdEcho(args):

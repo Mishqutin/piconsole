@@ -87,4 +87,4 @@ if line[0:2]=="?#":
 elif line=="?stats":
     print("IP: {}<br>Username: {}<br>Class: {}".format(ClientIP, config["users"][ClientIP]["name"], config["users"][ClientIP]["execClass"]))
 else:
-    execClass.cmdExec(line)
+    mainClass.cmdExec(line)
