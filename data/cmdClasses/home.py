@@ -14,19 +14,15 @@ class mainClass:
 
 
     helpText = """\
-Tu ma byc pomoc ale na razie jest slaba
-Wienc tak:
-Jestes w prostej konsoli: basicCmds
-Mozesz zmieniac konsole przez: ?#nazwa
-Jest jeszcze konsola... No nie wiem, projekt jest od roku lub dwoch, a nie ma nazwy.
-Wiec wpisz '?#cscCmds' aby przejsc do konsoli, przez ktora mozesz rozgladac sie po systemie plikow.
-Wtedy mozesz uzywac ls, cd, cat itp
-Komendy sa w /home/pi/Documents/server/shell
+Komendy ogólne:
+?#<klasa> - Wybierasz program, który używasz
+?class - Listuje dostępne programy
+?stats - Info
 
-Komendy w basicCmds:
-help
-username nazwa - zmienia twoj username
-motd - Najwazniejsza komenda musisz ja uzyc kazdego dnia chociaz raz, bo timeline sie zalamie
+Komendy w programie home:
+help - Ta pomoc
+motd - Najważniejsza komenda, musisz ją użyć conajmniej raz dziennie, bo inaczej umrzesz!
+username <imię> - Zmienia twoją nazwę
 """
 
 
@@ -34,7 +30,7 @@ motd - Najwazniejsza komenda musisz ja uzyc kazdego dnia chociaz raz, bo timelin
     cmds = {}
 
     def cmdHelp(args):
-        print(mainClass.helpText.replace("\n", "<br>"))
+        print(txtToHtml(mainClass.helpText))
     cmds["help"] = cmdHelp
 
     def cmdEcho(args):

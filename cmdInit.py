@@ -13,9 +13,7 @@ f.close()
 print(x.replace("\n", "<br>"))
 
 someText = """\
-Jak nie wiesz co robic to wpisz 'help'
-Polecam rowniez 'motd'
-?class - Listuje klasy
+Po pomoc wpisz: help
 <br>
 """
 
