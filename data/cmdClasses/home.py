@@ -21,7 +21,7 @@ Komendy ogolne:
 
 Komendy w programie home:
 help - Ta pomoc
-motd - Najwazniejsza komenda, musisz ja uzyć conajmniej raz dziennie, bo inaczej umrzesz!
+motd - Najwazniejsza komenda, musisz ja uzyc conajmniej raz dziennie, bo inaczej umrzesz!
 username <imie> - Zmienia twoja nazwe
 """
 
