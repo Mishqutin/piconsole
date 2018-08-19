@@ -1,5 +1,6 @@
 # piconsole
 
 # To-do list:
-- Dalej juz nie wiem, ale jak cos to napisze. xd
+- Waldziu:
+* Array z ostatnio wpisanymi komendami sie konczy w pewnym miejscu zamiast usuwac pierwsze wpisy.
 <br>
