@@ -46,6 +46,7 @@ if not ClientIP in config["users"]:
 
 
 def classExists(string):
+    return True
     print(CWD + "/data/cmdClasses/" + string + ".py")
     os.path.isfile(CWD + "/data/cmdClasses/" + string + ".py")
 
