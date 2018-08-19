@@ -1,4 +1,4 @@
-class execClass:
+class mainClass:
     def cmdExec(line):
         global config
         if len(line)==0:
@@ -13,7 +13,7 @@ class execClass:
                 config["users"][ClientIP]["cscConfig"]["entryCode"] = args[1]
             saveConfig(config)
         else:
-            cscCmds.client(line)
+            mainClass.client(line)
 
     ccConfig = {"name": config["users"][ClientIP]["name"],   "entryCode": config["users"][ClientIP]["cscConfig"]["entryCode"]}
 
@@ -27,12 +27,12 @@ class execClass:
         # Connect to host
         try:
             s = socket.socket()
-            s.connect(cscCmds.IP)
+            s.connect(mainClass.IP)
         except:
             print("Could not connect to server")
             return 1
 
-        s.send(( cscCmds.ccConfig["name"]+"@"+cscCmds.ccConfig["entryCode"] ).encode())
+        s.send(( mainClass.ccConfig["name"]+"@"+mainClass.ccConfig["entryCode"] ).encode())
         reply = (s.recv(16)).decode("ASCII")
         if reply!="ok":
             print("Access denied.")
