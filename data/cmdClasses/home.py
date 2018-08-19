@@ -15,14 +15,14 @@ class mainClass:
 
     helpText = """\
 Komendy ogólne:
-?#<klasa> - Wybierasz program, który używasz
-?class - Listuje dostępne programy
+?#<klasa> - Wybierasz program, ktory uzywasz
+?class - Listuje dostepne programy
 ?stats - Info
 
 Komendy w programie home:
 help - Ta pomoc
-motd - Najważniejsza komenda, musisz ją użyć conajmniej raz dziennie, bo inaczej umrzesz!
-username <imię> - Zmienia twoją nazwę
+motd - Najwazniejsza komenda, musisz ja uzyć conajmniej raz dziennie, bo inaczej umrzesz!
+username <imie> - Zmienia twoja nazwe
 """
 
 

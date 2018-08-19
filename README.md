@@ -1,5 +1,5 @@
 # piconsole
 
 # To-do list:
-- Dalej już nie wiem, ale jak coś to napiszę. xd
+- Dalej juz nie wiem, ale jak cos to napisze. xd
 <br>
