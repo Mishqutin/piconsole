@@ -86,5 +86,7 @@ if line[0:2]=="?#":
         print("No such class!")
 elif line=="?stats":
     print("IP: {}<br>Username: {}<br>Class: {}".format(ClientIP, config["users"][ClientIP]["name"], config["users"][ClientIP]["execClass"]))
+elif line=="?class":
+    print(os.listdir(CWD + "/data/cmdClasses"))
 else:
     mainClass.cmdExec(line)

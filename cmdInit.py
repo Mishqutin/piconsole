@@ -15,6 +15,7 @@ print(x.replace("\n", "<br>"))
 someText = """\
 Jak nie wiesz co robic to wpisz 'help'
 Polecam rowniez 'motd'
+?class - Listuje klasy
 <br>
 """
 
