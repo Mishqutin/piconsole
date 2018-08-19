@@ -52,7 +52,7 @@ def classExists(string):
 
 
 
-f = open(CWD + "/data/cmdClasses/" + config["users"][ClientIP]["execClass"], 'r')
+f = open(CWD + "/data/cmdClasses/" + config["users"][ClientIP]["execClass"]+".py", 'r')
 code = f.read()
 f.close()
 
