@@ -18,6 +18,13 @@ def txtToHtml(string):
     return x
 
 
+def logout():
+    print("<h1>GRAMY DUBSTEPY OKRADAMY SKLEPY!!</h1>")
+    print("Rozpierdalamy witryny skurwysyny<>")
+    print("<h3>Chce bys sie kurwa zesral ze smiechu jak pojebany klaun!</h3>")
+    print("<h2>MASZ PSZEJEBANE_________JAK BALWAN NA SACHARZE!</h2>")
+    print("<h2>You're about to log off, have a nice day!<h2>")
+    print('<meta http-equiv="refresh" content="0; url=78.28.45.60/piconsole/login/logout.php" />')
 
 
 
@@ -94,6 +101,8 @@ elif line=="?stats":
     print("IP: {}<br>Username: {}<br>Class: {}".format(ClientIP, config["users"][ClientIP]["name"], config["users"][ClientIP]["execClass"]))
 elif line=="?class":
     print(os.listdir(CWD + "/data/cmdClasses"))
+elif line=="?logout":
+    logoff()
 else:
     mainClass.cmdExec(line)
 
