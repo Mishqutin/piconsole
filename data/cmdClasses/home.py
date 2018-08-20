@@ -46,7 +46,9 @@ lol - Lol xd
     cmds["echo"] = cmdEcho
 
     def cmdLol(args):
-        print('<div id="lol"><h1>Haha lol xd</h1></div>')
+        lolId = "0"
+        cfgVarSet("lolId", 0)
+        print('<div id="lol{}"><h1>Haha lol xd</h1></div>'.format(lolId))
         js = """\
 <script language="javascript" type="text/javascript">
 var col=0;
