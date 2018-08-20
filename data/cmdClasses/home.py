@@ -48,6 +48,7 @@ lol - Lol xd
     def cmdLol(args):
         print('<div id="lol"><h1><font color="#00ff00">Haha lol xd</font></h1></div>')
         js = """\
+<script language="javascript" type="text/javascript">
 var col=0;
 function changeLolColor()
 {
@@ -63,6 +64,7 @@ function changeLolColor()
     }
 }
 setInterval(changeLolColor,500);
+</script>
 """
         print(js)
     cmds["lol"] = cmdLol
