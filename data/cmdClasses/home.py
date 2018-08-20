@@ -54,12 +54,12 @@ function changeLolColor()
 {
     if(col==0)
     {
-        document.getElementById("lol").style.color="red";
+        document.getElementById("lol").style.color="#ff0000";
         col=1;
     }
     else
     {
-        document.getElementById("lol").style.color="green";
+        document.getElementById("lol").style.color="#00ff00";
         col=0;
     }
 }
