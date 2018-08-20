@@ -102,7 +102,7 @@ elif line=="?stats":
 elif line=="?class":
     print(os.listdir(CWD + "/data/cmdClasses"))
 elif line=="?logout":
-    logoff()
+    logout()
 else:
     mainClass.cmdExec(line)
 
