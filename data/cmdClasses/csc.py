@@ -72,7 +72,7 @@ class mainClass:
                         print("Client: Invalid script file")
                 # If received simple string then print it out to console
                 else:
-                    print(txtToHtml(txt))
+                    print(txt)
             # If got any error (mainly by socket being closed) break the loop
             except: break
 
