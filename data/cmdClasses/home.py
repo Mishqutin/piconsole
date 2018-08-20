@@ -27,6 +27,7 @@ Komendy w programie home:
 help - Ta pomoc
 motd - Najwazniejsza komenda, musisz ja uzyc conajmniej raz dziennie, bo inaczej umrzesz!
 username <imie> - Zmienia twoja nazwe
+lol - Potrzebowalem tom komendee bardzo wazna xd
 """
 
 
@@ -45,7 +46,8 @@ username <imie> - Zmienia twoja nazwe
     cmds["echo"] = cmdEcho
 
     def cmdLol(args):
-        print("uzycie komenda &lt;<b>Bold stuff</b>&gt;")
+        print("<a href="https://www.animeout.xyz/sword-art-online/">Animeout SAO</a><br>")
+        print("Lol xd")
     cmds["lol"] = cmdLol
 
     def cmdCat(args):
