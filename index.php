@@ -17,11 +17,9 @@ require_once('helpers.php');
 	width:750px;
 	margin-left:auto;
 	margin-right:auto;
-
 	font-size:14px;
 			min-height: 16px;
 }
-
 	#console {
 		font-family: courier, monospace;
 		color: #fff;
@@ -45,7 +43,6 @@ require_once('helpers.php');
 	#b , .b{
 		color: #ff0096;
 	}
-
 	#cmdForm {
     font-family: courier, monospace;
     color: #fff;
@@ -55,7 +52,6 @@ require_once('helpers.php');
     font-size: 14px;
     min-height: 16px;
 }
-
 input {
 	width: 70%;
 	background-color: black;
@@ -80,14 +76,12 @@ input:focus {
 $(function () {
 	var keyPressCount38 = 0;
 	$( document ).ready(function() {
-
 		$( ".cmd-command" ).focus();
 	});
 	$( document ).click(function() {
 	  $( ".cmd-command" ).focus();
 	});
     var frm = $('#cmdForm');
-
     frm.submit(function (ev) {
 			$("#console").append('<span class="a"><?= get_client_ip(); ?></span>:<span class="b">~</span><span class="c">$</span> '+$(".cmd-command").val()+'<br>');
 				var readCookie_last_command = readCookie('last_command');
@@ -117,11 +111,8 @@ $(function () {
         });
         ev.preventDefault();
     });
-
 		function checkKey(e) {
-
 		    e = e || window.event;
-
 		    if (e.keyCode == '38') {
 					$(".cmd-command").val("");
 					var json_str = readCookie('last_command');
@@ -131,7 +122,6 @@ $(function () {
 					} else if (!$.isArray(arr) && arr) {
 							eraseCookie('last_command');
 					} else {
-
 					}
 					if(arr){
 						if(arr.length > keyPressCount38){
@@ -140,7 +130,6 @@ $(function () {
 							keyPressCount38 = 0;
 						}
 					}
-
 		    }
 		    else if (e.keyCode == '40') {
 					$(".cmd-command").val("");
@@ -153,7 +142,6 @@ $(function () {
 							} else {
 								keyPressCount38--;
 							}
-
 						} else {
 							keyPressCount38 = 0;
 						}
@@ -164,16 +152,12 @@ $(function () {
 					} else if (!$.isArray(arr) && arr) {
 							eraseCookie('last_command');
 					} else {
-
 					}
-
 		    }
 		}
 		document.onkeydown = checkKey;
 		function createCookie(name, value, days) {
-
 		    var expires;
-
 		    if (days) {
 		        var date = new Date();
 		        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -183,7 +167,6 @@ $(function () {
 		    }
 		    document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
 		}
-
 		function readCookie(name) {
 		    var nameEQ = encodeURIComponent(name) + "=";
 		    var ca = document.cookie.split(';');
@@ -196,11 +179,9 @@ $(function () {
 		    }
 		    return null;
 		}
-
 		function eraseCookie(name) {
 		    createCookie(name, "", -1);
 		}
-
 });
 </script>
 
