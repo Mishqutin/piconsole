@@ -24,11 +24,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
     </div>
     <p>
-      shit
-      <?php var_dump($_SESSION);?>
       <?php if(isset($_SESSION["role"]) && $_SESSION["role"] == 'admin'){?>
         <a href="/piconsole/" class="btn btn-primary">Console</a>
-      <? } ?>
+      <?php } ?>
         <a href="reset.php" class="btn btn-warning">Reset Your Password</a>
         <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
     </p>
