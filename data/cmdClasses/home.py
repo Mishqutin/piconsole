@@ -46,7 +46,7 @@ lol - Lol xd
     cmds["echo"] = cmdEcho
 
     def cmdLol(args):
-        print('<h1><font color="red">Haha lol xd</font></h1>')
+        print('<h1><font color="#00ff00">Haha lol xd</font></h1>')
     cmds["lol"] = cmdLol
 
     def cmdCat(args):
