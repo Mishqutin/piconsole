@@ -35,7 +35,7 @@ def cfgVarSet(name, value):
     global config
     config["vars"][name] = value
 
-config["vars"] = {}
+
 
 
 
