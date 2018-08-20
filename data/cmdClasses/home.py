@@ -46,7 +46,25 @@ lol - Lol xd
     cmds["echo"] = cmdEcho
 
     def cmdLol(args):
-        print('<h1><font color="#00ff00">Haha lol xd</font></h1>')
+        print('<div id="lol"><h1><font color="#00ff00">Haha lol xd</font></h1></div>')
+        js = """\
+var col=0;
+function changeLolColor()
+{
+    if(col==0)
+    {
+        document.getElementById("lol").style.color="red";
+        col=1;
+    }
+    else
+    {
+        document.getElementById("lol").style.color="green";
+        col=0;
+    }
+}
+setInterval(changeLolColor,500);
+"""
+        print(js)
     cmds["lol"] = cmdLol
 
     def cmdCat(args):
