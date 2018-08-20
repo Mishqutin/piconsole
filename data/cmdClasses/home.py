@@ -46,8 +46,9 @@ lol - Lol xd
     cmds["echo"] = cmdEcho
 
     def cmdLol(args):
-        lolId = "0"
-        cfgVarSet("lolId", 0)
+        lolId = cfgVarGet("lolId")
+        cfgVarSet("lolId", lolId+1)
+        lolId = str(lolId)
         print('<div id="lol{}"><h1>Haha lol xd</h1></div>'.format(lolId))
         js = """\
 <script language="javascript" type="text/javascript">
@@ -56,19 +57,19 @@ function changeLolColor()
 {
     if(col==0)
     {
-        document.getElementById("lol").style.color="#ff0000";
+        document.getElementById("lol{}").style.color="#ff0000";
         col=1;
     }
     else
     {
-        document.getElementById("lol").style.color="#00ff00";
+        document.getElementById("lol{}").style.color="#00ff00";
         col=0;
     }
 }
 setInterval(changeLolColor,500);
 </script>
 """
-        print(js)
+        print(js.format(lolId, lolId))
     cmds["lol"] = cmdLol
 
     def cmdCat(args):
