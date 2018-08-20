@@ -25,8 +25,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     </div>
     <p>
       shit
-      <? var_dump($_SESSION);?>
-      <? if(isset($_SESSION["role"]) && $_SESSION["role"] == 'admin'){?>
+      <?php var_dump($_SESSION);?>
+      <?php if(isset($_SESSION["role"]) && $_SESSION["role"] == 'admin'){?>
         <a href="/piconsole/" class="btn btn-primary">Console</a>
       <? } ?>
         <a href="reset.php" class="btn btn-warning">Reset Your Password</a>
