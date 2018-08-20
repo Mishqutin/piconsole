@@ -3,6 +3,10 @@
 session_start();
 
 // Unset all of the session variables
+$_SESSION["loggedin"] = false;
+$_SESSION["id"] = '';
+$_SESSION["username"] = '';
+$_SESSION["role"] = '';
 $_SESSION = array();
 
 // Destroy the session.
