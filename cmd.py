@@ -80,7 +80,6 @@ line = ' '.join(sys.argv[2:])
 if line[0:2]=="?#":
     if classExists(line[2:]):
         config["users"][ClientIP]["execClass"] = line[2:]
-        saveConfig(config)
         print("Updated execution class")
     else:
         print("No such class!")
@@ -90,3 +89,5 @@ elif line=="?class":
     print(os.listdir(CWD + "/data/cmdClasses"))
 else:
     mainClass.cmdExec(line)
+
+saveConfig(config)
