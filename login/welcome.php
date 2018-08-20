@@ -21,7 +21,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </head>
 <body>
     <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]) . ' Role: ' . $_SESSION["role"]?$_SESSION["role"]:'User'; ?></b>. Welcome to our site.</h1>
+        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]) . ' Role: ' . ($_SESSION["role"]?$_SESSION["role"]:'User'); ?></b>. Welcome to our site.</h1>
     </div>
     <p>
       <?php if(isset($_SESSION["role"]) && $_SESSION["role"] == 'admin'){?>
