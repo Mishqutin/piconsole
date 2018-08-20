@@ -1,7 +1,13 @@
 # piconsole
 
 # To-do list:
-- Waldziu:
+-- Waldziu:
 * Array z ostatnio wpisanymi komendami sie konczy w pewnym miejscu zamiast usuwac pierwsze wpisy.
 * Zamiast IP przy wpisywaniu moglo by byc <b>JajkoNetwork</b>
+-- Misza i Waldziu:
+* Opcja 1:
+** Odebrac argumenty w cmdInit.py, zmienic w arraya i wykonac na poczatku
+** W linku metoda GET argument mogl by byc przekazany do cmdInit.py
+* Opcja 2:
+** Pomyslec nad opcja 2    
 <br>
