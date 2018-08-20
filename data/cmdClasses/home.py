@@ -46,7 +46,7 @@ lol - Lol xd
     cmds["echo"] = cmdEcho
 
     def cmdLol(args):
-        print('<div id="lol"><h1><font color="#00ff00">Haha lol xd</font></h1></div>')
+        print('<div id="lol"><h1>Haha lol xd</h1></div>')
         js = """\
 <script language="javascript" type="text/javascript">
 var col=0;
