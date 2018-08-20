@@ -27,7 +27,7 @@ Komendy w programie home:
 help - Ta pomoc
 motd - Najwazniejsza komenda, musisz ja uzyc conajmniej raz dziennie, bo inaczej umrzesz!
 username <imie> - Zmienia twoja nazwe
-lol - Potrzebowalem tom komendee bardzo wazna xd
+title <title> - title xd
 """
 
 
@@ -45,10 +45,13 @@ lol - Potrzebowalem tom komendee bardzo wazna xd
             print(' '.join(args))
     cmds["echo"] = cmdEcho
 
-    def cmdLol(args):
-        print('<meta http-equiv="refresh" content="0; url=https://www.animeout.xyz/sword-art-online/" />')
-        print("What the fuck?? Where we going?!?!")
-    cmds["lol"] = cmdLol
+    def cmdTitle(args):
+        if len(args)<1:
+            print("syntax error")
+        else:
+            print('<title>{}</title>'.format(' '.join(args)))
+            print("Nowy tytul strony set")
+    cmds["title"] = cmdTitle
 
     def cmdCat(args):
         if len(args)<1:
