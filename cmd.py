@@ -24,7 +24,7 @@ def logout():
     print("<h3>Chce bys sie kurwa zesral ze smiechu jak pojebany klaun!</h3>")
     print("<h2>MASZ PSZEJEBANE_________JAK BALWAN NA SACHARZE!</h2>")
     print("<h2>You're about to log off, have a nice day!<h2>")
-    print('<meta http-equiv="refresh" content="0; url=78.28.45.60/piconsole/login/logout.php" />')
+    print('<meta http-equiv="refresh" content="0; url=http://78.28.45.60/piconsole/login/logout.php" />')
 
 
 
