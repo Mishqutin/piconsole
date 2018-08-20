@@ -27,7 +27,7 @@ Komendy w programie home:
 help - Ta pomoc
 motd - Najwazniejsza komenda, musisz ja uzyc conajmniej raz dziennie, bo inaczej umrzesz!
 username <imie> - Zmienia twoja nazwe
-title <title> - title xd
+lol - Lol xd
 """
 
 
@@ -45,13 +45,9 @@ title <title> - title xd
             print(' '.join(args))
     cmds["echo"] = cmdEcho
 
-    def cmdTitle(args):
-        if len(args)<1:
-            print("syntax error")
-        else:
-            print('<title>{}</title>'.format(' '.join(args)))
-            print("Nowy tytul strony set")
-    cmds["title"] = cmdTitle
+    def cmdLol(args):
+        print('<h1><font color="red">Haha lol xd</font></h1>')
+    cmds["lol"] = cmdLol
 
     def cmdCat(args):
         if len(args)<1:
