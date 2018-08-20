@@ -54,18 +54,18 @@ lol - Lol xd
 <script language="javascript" type="text/javascript">
 var col=0;
 function changeLolColor()
-{
+{{
     if(col==0)
-    {
+    {{
         document.getElementById("lol{}").style.color="#ff0000";
         col=1;
-    }
+    }}
     else
-    {
+    {{
         document.getElementById("lol{}").style.color="#00ff00";
         col=0;
-    }
-}
+    }}
+}}
 setInterval(changeLolColor,500);
 </script>
 '''
