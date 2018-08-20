@@ -15,6 +15,6 @@
 -- Misza:
 * W systemie plikow (?#csc) zrobic komende run do plikow np. html
 * cmd cat wyswietla tylko text (escape html)
-* <font size="4">Zalepic ta wielka dziure w zabezpieczeniach</font>
+* <font size="1">Zalepic ta wielka dziure w zabezpieczeniach</font>
 wtf?
 <br>
