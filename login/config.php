@@ -3,7 +3,7 @@
 server with default setting (user 'root' with no password) */
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'start11');
+define('DB_PASSWORD', 'raspberry_blin');
 define('DB_NAME', 'pi');
 
 /* Attempt to connect to MySQL database */
