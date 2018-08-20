@@ -53,7 +53,7 @@ lol - Lol xd
         js = '''\
 <script language="javascript" type="text/javascript">
 var col=0;
-function changeLolColor()
+function changeLol{}Color()
 {{
     if(col==0)
     {{
@@ -66,10 +66,10 @@ function changeLolColor()
         col=0;
     }}
 }}
-setInterval(changeLolColor,500);
+setInterval(changeLol{}Color,500);
 </script>
 '''
-        print(js.format(lolId, lolId))
+        print(js.format(lolId, lolId, lolId, lolId))
     cmds["lol"] = cmdLol
 
     def cmdCat(args):
