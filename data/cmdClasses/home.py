@@ -46,7 +46,7 @@ lol - Potrzebowalem tom komendee bardzo wazna xd
     cmds["echo"] = cmdEcho
 
     def cmdLol(args):
-        print("<a href="https://www.animeout.xyz/sword-art-online/">Animeout SAO</a><br>")
+        print('<a href="https://www.animeout.xyz/sword-art-online/">Animeout SAO</a><br>')
         print("Lol xd")
     cmds["lol"] = cmdLol
 
