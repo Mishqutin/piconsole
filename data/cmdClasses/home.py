@@ -50,7 +50,7 @@ lol - Lol xd
         cfgVarSet("lolId", lolId+1)
         lolId = str(lolId)
         print('<div id="lol{}"><h1>Haha lol xd</h1></div>'.format(lolId))
-        js = """\
+        js = '''\
 <script language="javascript" type="text/javascript">
 var col=0;
 function changeLolColor()
@@ -68,7 +68,7 @@ function changeLolColor()
 }
 setInterval(changeLolColor,500);
 </script>
-"""
+'''
         print(js.format(lolId, lolId))
     cmds["lol"] = cmdLol
 
