@@ -37,7 +37,7 @@ ClientIP = sys.argv[1]
 
 if not ClientIP in config["users"]:
     print("You seem new here! Lemme config your account...<br>")
-    config["users"][ClientIP] = {"IP": ClientIP, "execClass": "home", "name": "unnamed", "cscConfig":{"host": "localhost", "port": 33301, "entryCode": "CHWDP_JP100"}}
+    config["users"][ClientIP] = {"IP": ClientIP, "execClass": "home", "name": "unnamed", "cscConfig":{"host": "localhost", "port": 33302, "entryCode": "CHWDP_JP100"}}
     saveConfig(config)
     print("Hello! :)<br><br>")
 
