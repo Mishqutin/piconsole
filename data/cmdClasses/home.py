@@ -19,6 +19,10 @@ Komendy ogolne:
 ?class - Listuje dostepne programy
 ?stats - Info
 
+Programy:
+?#home - Ten program
+?#csc  - Zarzadzanie plikami itp.
+
 Komendy w programie home:
 help - Ta pomoc
 motd - Najwazniejsza komenda, musisz ja uzyc conajmniej raz dziennie, bo inaczej umrzesz!
