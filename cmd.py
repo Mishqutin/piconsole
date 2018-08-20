@@ -28,7 +28,14 @@ def saveConfig(config):
     f.write(str(config))
     f.close()
 
+def cfgVarGet(name):
+    return config["vars"][name]
 
+def cfgVarSet(name, value):
+    global config
+    config["vars"][name] = value
+
+config["vars"] = {}
 
 
 
